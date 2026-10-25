@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Harbor container registry server configuration hardening auditor (offline, read-only)
+OHarborX — Harbor Container Registry Server Config Auditor. It provides stdlib YAML-lite / env / nginx.conf / JSON parsers. Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,9 +30,6 @@ Harbor container registry server configuration hardening auditor (offline, read-
 - docker-compose.yml for the Harbor stack — exposed internal ports, privileged, docker.sock, secrets
 - Auth — db_auth, LDAP / OIDC / UAA verify_cert, self-registration, project creation restriction
 - JSON exports — projects, members, robot accounts, registry endpoints / proxy-cache upstreams
-- Offline /data and /data/secret permission walk
-- Secrets masked; --root discovery; CWE + MITRE ATT&CK
-- TXT / MD / JSON / CSV / SARIF 2.1.0; --demo; --fail-on
 
 ---
 
@@ -46,7 +43,10 @@ Harbor container registry server configuration hardening auditor (offline, read-
 ## 🚀 Usage
 
 ```bash
-./OHarborX
+./OHarborX                                     # interactive menu
+./OHarborX --scan -r /path/to/root
+./OHarborX --demo
+./OHarborX --help
 ```
 
 ---
